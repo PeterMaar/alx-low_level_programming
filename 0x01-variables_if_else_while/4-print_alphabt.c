@@ -2,7 +2,7 @@
 
 /**
 *main - prints
-*New line
+*
 *Return: always 0
 */
 
