@@ -2,24 +2,29 @@
 
 /**
  * leet - encodes a string into 1337
- * @n: input
- * Return: the value of n
+ * @str: pointer to string to operate on
+ *
+ * Return: character pointer to modified str
  */
 
-char *leet(char *n)
+char *leet(char *str)
 {
-int i, j;
-char s1[] = "aAeEoOtTlL";
-char s2[] = "4433007711";
-for (i = 0; n[i] != '\0'; i++)
+int count = 0, i;
+int low_case[] = {97, 101, 111, 116, 108};
+int uppercase[] = {65, 69, 79, 84, 76};
+int numbers[] = {52, 51, 48, 55, 49};
+while (*(str + count) != '\0')
 {
-for (j = 0; j < 10; j++)
+for (i = 0; i < 5; i++)
 {
-if (n[i] == s1[j])
+if (*(str + count) == low_case[i] ||
+*(str + count) == uppercase[i])
 {
-n[i] = s2[j];
+*(str + count) = numbers[i];
+break;
 }
 }
+count++;
 }
-return (n);
+return (str);
 }
